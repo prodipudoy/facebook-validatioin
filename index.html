@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>fb page validation c</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="js/script.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="main_header">
+			<div class="main_head">
+				<div class="header_left">
+					<div class="icon"><a href="">facebook</a></div>
+				</div>
+				<div class="header_right">
+					<div class="login">
+						<span class="email_login ">Email or phone</span>
+						<span class="email_login email_login_right">Password</span>
+						<form action="">
+							<input type="text" class="input_login">
+							<input type="password" class="input_login">
+							<input type="submit" class="submit" value="Log in">
+							<p class="forget_pass"><a href="#">Forgotten password?</a></p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="main_container">
+		<div class="container">
+			<div class="left_content">
+				<p>Facebook helps you connect and share with the people in your life.</p>
+				<img src="img/pic.png" alt="facebook log in">
+			</div>
+			<div class="right_content">
+				<h1>Create an account</h1>
+				<p class="log_easy">It's quick and easy.</p>
+
+				<form action="success.html" onsubmit="return validation()">
+					<input type="text" id="firstname" placeholder="FIrst name">
+					<input type="text" id="lastname" placeholder="Surename"><span id="elname"></span><br><br>
+					<input type="email" id="email" placeholder="Moblie number or email address"><span
+						id="eemail"></span><br><br>
+					<input type="password" id="newpassword" placeholder="New password"><span
+						id="epassword"></span><br><br>
+					<p class="birth_head">BIrthday:</p>
+					<select>
+						<option id="date">Date</option>
+						<script type="text/javascript">
+							var date = new Date();
+							ini = 1;
+							end = 31;
+							for (ini; ini <= end; ini++) {
+								document.write("<option>" + ini + "</option>");
+							}
+						</script>
+						<option></option>
+					</select>
+
+					<select id="month">
+						<option value="0">Month</option>
+						<script type="text/javascript">
+							var date = new Date();
+							var autoSelectMonth = date.getMonth();
+							var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Ocr', 'Nov', 'Dec'];
+							for (key in month) {
+								if (key == month) {
+									var selectedMonth = "selected";
+
+								} else {
+									selectedMonth = date.getMonth();
+								}
+								document.write("<option value='" + key + "' " + selectedMonth + ">" + month[key] + "</option>");
+							}
+						</script>
+					</select>
+					<select id="year">
+						<option value="0">Year</option>
+						<script>
+							var date = new Date();
+							var year = date.getFullYear();
+							var ini = 1900;
+							var registration_year = year - 10;
+
+							for (year; ini <= year; year--) {
+								if (ini == 1997 || ini == 2000) {
+									continue;
+								}
+								if (year == 1995) {
+									var selected = "selected";
+								} else {
+									var selected = "";
+								}
+								document.write("<option value='" + year + "' " + selected + ">" + year + "</option>");
+								if (registration_year == ini) {
+									break;
+								}
+							}
+						</script>
+					</select>
+					<a href="#" class="more_inf">?</a>
+					<br><br>
+
+					<div id="gender_list">
+						<h2>Gender:</h2>
+
+						Male :<input type="radio" value="m" name="gender" id="male">
+						Female:<input type="radio" value="f" name="gender" id="female">
+						CUstom:<input type="radio" value="f" name="gender" id="custom">
+						<a href="#" class="more_inf">?</a>
+					</div>
+
+					<br>
+					<p class="end_text">By clicking Sign Up, you agree to our <a href="#"
+							style="text-decoration: none">Terms</a>, <a href="#" style="text-decoration: none">Data
+							Policy</a> and <a href="#" style="text-decoration: none">Cookie Policy</a>. You may receive
+						SMS notifications from us and can opt out at any time.</p>
+					<input type="submit" value="sign up" class="sign_up">
+					<br><br>
+					<p class="end_text1"><a href="#" style="text-decoration: none">Create a Page</a> for a celebrity,
+						band or business.</p>
+
+
+				</form>
+			</div>
+			<div class="error">
+				<div class="name_error" id="name_info">
+					<p class="error_msg1">What's your name?</p><img class="name_img" src="img/arrow1.png" alt="">
+				</div>
+				<div class="surename_error" id="surename_info">
+					<p class="error_msg2">What's your name?</p><img class="surename_img" src="img/arrow3.png" alt="">
+				</div>
+				<div class="mobile_error" id="mobile_info">
+					<p class="error_msg3">you'll use this when you log in and if <br>you ever need to reset you
+						password.</p><img class="mobile_img" src="img/arrow1.png" alt="">
+				</div>
+				<div class="pass_error" id="pass_info">
+					<p class="error_msg4">Enter a combination of at least six numbers,letters <br>and punctuation marks
+						(such as ! and &) </p><img class="pass_img" src="img/arrow1.png" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="developer_option">
+			<div class="language_div">
+				<p class="lang_div"><a href="">English (UK)</a></p>
+				<p class="lang_div"><a href="">বাংলা</a></p>
+				<p class="lang_div"><a href="">অসমীয়া</a></p>
+				<p class="lang_div"><a href="">हिन्दी</a></p>
+				<p class="lang_div"><a href="">Bahasa Indonesia</a></p>
+				<p class="lang_div"><a href="">नेपाली</a></p>
+				<p class="lang_div"><a href="">中文(简体)</a></p>
+				<p class="lang_div"><a href="">العربية</a></p>
+				<p class="lang_div"><a href="">Bahasa Melayu</a></p>
+				<p class="lang_div"><a href="">Español</a></p>
+				<p class="lang_div"><a href="">Português</a></p>
+				<p class="lang_div"><a href="">(Brasil)</a></p>
+				<hr>
+			</div>
+			<div class="finish_div">
+				<p class="finish_p"><a href="">sign up</a></p>
+				<p class="finish_p"><a href="">log in</a></p>
+				<p class="finish_p"><a href="">messenger</a></p>
+				<p class="finish_p"><a href="">facebook lite</a></p>
+				<p class="finish_p"><a href="">watch</a></p>
+				<p class="finish_p"><a href="">peaople</a></p>
+				<p class="finish_p"><a href="">pages</a></p>
+				<p class="finish_p"><a href="">page catagories</a></p>
+				<p class="finish_p"><a href="">places</a></p>
+				<p class="finish_p"><a href="">game</a></p>
+				<p class="finish_p"><a href="">locations</a></p>
+				<p class="finish_p"><a href="">marcketplace</a></p>
+				<p class="finish_p"><a href="">group</a></p>
+				<p class="finish_p"><a href="">instagram</a></p><br>
+				<p class="finish_p"><a href="">local</a></p>
+				<p class="finish_p"><a href="">foundraisers</a></p>
+				<p class="finish_p"><a href="">service</a></p>
+				<p class="finish_p"><a href="">about</a></p>
+				<p class="finish_p"><a href="">creat dd</a></p>
+				<p class="finish_p"><a href="">creat page</a></p>
+				<p class="finish_p"><a href="">developers</a></p>
+				<p class="finish_p"><a href="">careers</a></p>
+				<p class="finish_p"><a href="">privacy</a></p>
+				<p class="finish_p"><a href="">cookies</a></p>
+				<p class="finish_p"><a href="">adchoice</a></p>
+				<p class="finish_p"><a href="">terms</a></p>
+				<p class="finish_p"><a href="">helps</a></p>
+
+				<div class="developer">
+					<p>Facebook © 2020</p>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</body>
+
+</html>
